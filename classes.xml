@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<classes>
+	<class id="Warrior">
+		<strength>12</strength>
+		<intelligence>5</intelligence>
+		<wisdom>6</wisdom>
+		<dexterity>10</dexterity>
+		<charisma>7</charisma>
+		<hitPoints>8</hitPoints>
+		<stamina>12</stamina>
+		<willpower>8</willpower>
+	</class>
+	<class id="Priest">
+		<strength>8</strength>
+		<intelligence>10</intelligence>
+		<wisdom>12</wisdom>
+		<dexterity>6</dexterity>
+		<charisma>9</charisma>
+		<hitPoints>6</hitPoints>
+		<stamina>10</stamina>
+		<willpower>12</willpower>
+	</class>
+	<class id="Mage">
+		<strength>5</strength>
+		<intelligence>14</intelligence>
+		<wisdom>10</wisdom>
+		<dexterity>5</dexterity>
+		<charisma>9</charisma>
+		<hitPoints>4</hitPoints>
+		<stamina>7</stamina>
+		<willpower>11</willpower>
+	</class>
+	<class id="Rogue">
+		<strength>10</strength>
+		<intelligence>9</intelligence>
+		<wisdom>6</wisdom>
+		<dexterity>13</dexterity>
+		<charisma>11</charisma>
+		<hitPoints>5</hitPoints>
+		<stamina>8</stamina>
+		<willpower>9</willpower>
+	</class>
+</classes>
