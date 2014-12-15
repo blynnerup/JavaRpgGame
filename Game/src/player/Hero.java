@@ -23,16 +23,18 @@ public class Hero {
 	private int armor = 2;
 	private int fireResistance = 0;
 	
-	//TODO create inventory..
 	private GenericWeapon weapon = null;
+	public Inventory inventory = null;
 	
 	public Hero(){
+		inventory = new Inventory();
 	}
 	
 	public void equipWeapon(GenericWeapon weapon){
 		this.setWeapon(weapon);
 		weapon.damageModifier(getStrength());
 	}
+	
 	
 // Name get/set
 	public String getName() {

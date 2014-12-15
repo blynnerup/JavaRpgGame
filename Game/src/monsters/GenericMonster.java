@@ -1,5 +1,6 @@
 package monsters;
 
+import consumables.GenericConsumable;
 import weapons.GenericWeapon;
 
 public class GenericMonster {
@@ -18,11 +19,25 @@ public class GenericMonster {
 	private int armor = 0;
 	private int fireResistance = 0;
 	
+	//TODO Create xp gain value, level?
+	
 	// Basic gear
 	private GenericWeapon equipment = null;
 	
 	public void equipWeapon(GenericWeapon weapon){
 		
+	}
+	
+	public int goldLoot(){
+		return 0;
+	}
+	
+	public GenericWeapon weaponLoot(){
+		return null;
+	}
+	
+	public GenericConsumable consumableLoot(){
+		return null;
 	}
 	
 	public int calculateDamageDelt(){

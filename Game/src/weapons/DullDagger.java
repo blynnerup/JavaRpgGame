@@ -20,7 +20,6 @@ public class DullDagger extends GenericWeapon {
 	public int calculateDamageDelt() {
 		Random rand = new Random();
 		int dieRoll = rand.nextInt(3) + 1;
-		System.out.println("Dmg from dagger: " + dieRoll + dmgMod);
 		return dieRoll + dmgMod;
 	}
 	

@@ -3,6 +3,7 @@ package gameLogic;
 import player.Hero;
 import player.ImportBasicStats;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -62,6 +63,13 @@ public class CreateNewHero {
 		ImportBasicStats importStats = new ImportBasicStats();
 		importStats.importStats(h, h.getHeroClass());
 		importStats.equipBasicGear(h, h.getHeroClass());
+		System.out.println("Here starts your adventures, " + h.getName() + ". You are a eager " + h.getHeroClass() + " that is traveling out into the world looking for fame and riches." 
+		+ "\nArmed only with a " + h.getWeapon().toString() + " you set forth to combat what ever dangers life will bring you across. Godspeed hero!\nPress Enter to continue.");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return h;
 	}
 }

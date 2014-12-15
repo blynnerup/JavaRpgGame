@@ -23,7 +23,6 @@ public class RustySword extends GenericWeapon {
 		
 		int dieRoll = rand.nextInt(4) + 1;
 		damage = dieRoll + 3;
-		System.out.println("dmg from rusty sword: " + damage + dmgMod);
 		return damage + dmgMod;
 	}
 	

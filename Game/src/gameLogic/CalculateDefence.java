@@ -8,6 +8,13 @@ public class CalculateDefence {
 	GenericWeapon weap;
 	Hero h;
 	GenericMonster m;
+	
+	private String heroDefType = "";
+	private int heroDefValue = 0;
+	private String monsterDefType = "";
+	private int monsterDefValue = 0;
+	
+	
 	// Calculate defense for attacks against the hero..
 	public CalculateDefence(GenericWeapon weapon, Hero hero) {
 		weap = weapon;
@@ -25,10 +32,16 @@ public class CalculateDefence {
 	 */
 	public int getHeroDefense(){
 		int def = 0;
-		if(weap.getDamageType().equals("physical"))
+		if(weap.getDamageType().equals("physical")){
 			def = h.getArmor();
-		if(weap.getDamageType().equals("fire"))
+			heroDefType = weap.getDamageType();
+			heroDefValue = def;
+		}
+		if(weap.getDamageType().equals("fire")){
 			def = h.getFireResistance();
+			heroDefType = weap.getDamageType();
+			heroDefValue = def;
+		}
 		return def;
 	}
 	/*
@@ -36,12 +49,49 @@ public class CalculateDefence {
 	 */
 	public int getMonsterDefense(){
 		int def = 0;
-		if(weap.getDamageType().equals("physical"))
+		if(weap.getDamageType().equals("physical")){
 			def = m.getArmor();
-		if(weap.getDamageType().equals("fire"))
+			monsterDefType = weap.getDamageType();
+			monsterDefValue = def;
+		}
+		if(weap.getDamageType().equals("fire")){
 			def = m.getFireResistance();
-		System.out.println("Monster def: " + def + " and is of type: " + weap.getDamageType());
+			monsterDefType = weap.getDamageType();
+			monsterDefValue = def;
+		}
 		return def;
+	}
+
+	public String getHeroDefType() {
+		return heroDefType;
+	}
+
+	public void setHeroDefType(String heroDefType) {
+		this.heroDefType = heroDefType;
+	}
+
+	public int getHeroDefValue() {
+		return heroDefValue;
+	}
+
+	public void setHeroDefValue(int heroDefValue) {
+		this.heroDefValue = heroDefValue;
+	}
+
+	public String getMonsterDefType() {
+		return monsterDefType;
+	}
+
+	public void setMonsterDefType(String monsterDefType) {
+		this.monsterDefType = monsterDefType;
+	}
+
+	public int getMonsterDefValue() {
+		return monsterDefValue;
+	}
+
+	public void setMonsterDefValue(int monsterDefValue) {
+		this.monsterDefValue = monsterDefValue;
 	}
 
 }

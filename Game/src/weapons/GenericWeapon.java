@@ -9,9 +9,11 @@ public class GenericWeapon {
 	private int level = 1;
 	private Boolean twoHanded = false;
 	private String Description = "";
+	private int goldValue = 0;
+	
+	//TODO durability? class limitations?...ect
 	
 	public GenericWeapon() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public int calculateDamageDelt(){
@@ -77,5 +79,13 @@ public class GenericWeapon {
 
 	public void setDescription(String description) {
 		Description = description;
+	}
+
+	public int getGoldValue() {
+		return goldValue;
+	}
+
+	public void setGoldValue(int goldValue) {
+		this.goldValue = goldValue;
 	}
 }

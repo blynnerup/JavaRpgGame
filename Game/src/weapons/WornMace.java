@@ -20,7 +20,6 @@ private int dmgMod = 0;
 public int calculateDamageDelt() {
 	Random rand = new Random();
 	int dieRoll = rand.nextInt(3) + 1;
-	System.out.println("Dmg from mace: " + dieRoll + dmgMod);
 	return dieRoll + dmgMod;
 }
 
