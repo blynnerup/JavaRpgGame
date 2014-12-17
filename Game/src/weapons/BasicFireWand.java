@@ -12,6 +12,10 @@ public class BasicFireWand extends GenericWeapon {
 		this.setName("Basic Fire Wand");
 		this.setRanged(true);
 		this.setTwoHanded(false);
+		this.setOffHand(false);
+		this.setMainHand(true);
+		
+		this.setGoldValue(5);
 	}
 	
 	private int dmgMod = 0;

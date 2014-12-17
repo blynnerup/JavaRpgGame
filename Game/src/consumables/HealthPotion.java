@@ -8,6 +8,8 @@ public class HealthPotion extends GenericConsumable {
 		this.setInstantHealthRegain(5);
 		this.setInstantManaRegain(0);
 		this.setLevel(1);
+		
+		this.setGoldValue(3);
 	}
 	
 	@Override

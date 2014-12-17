@@ -38,6 +38,7 @@ public class MainLogic {
 	}
 	
 	public void firstEncounter(){
+		h.paperDoll.printEquipment();
 		System.out.println("Headed out from your hometown towards the near village of Hout, you travel along the main road, when in the distance you see a small creature chasing a woman." + 
 	"\nYou ready your " + h.getWeapon().toString() + " and charge ahead. As you get closer you see the creature is a goblin. The woman screams for help, and you rush in");
 		GenericMonster gobbo = new Goblin();

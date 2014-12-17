@@ -12,6 +12,10 @@ public class RustySword extends GenericWeapon {
 		this.setName("Rusty Sword");
 		this.setRanged(false);
 		this.setTwoHanded(false);
+		this.setOffHand(false);
+		this.setMainHand(true);
+		
+		this.setGoldValue(5);
 	}
 	
 	private int dmgMod = 0;
@@ -28,7 +32,7 @@ public class RustySword extends GenericWeapon {
 	
 	@Override
 	public String toString(){
-		return "rusty sword.";
+		return "rusty sword";
 	}
 
 	@Override

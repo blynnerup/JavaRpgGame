@@ -34,7 +34,7 @@ public class GenericMonster {
 	}
 		
 	private void calculateXpValue(){
-		setXpValue(getEquipment().getLevel() + getBasisLevel());
+		
 	}
 	
 	public int goldLoot(){

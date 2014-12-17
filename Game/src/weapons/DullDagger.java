@@ -12,6 +12,10 @@ public class DullDagger extends GenericWeapon {
 		this.setName("Dull Dagger");
 		this.setRanged(false);
 		this.setTwoHanded(false);
+		this.setOffHand(true);
+		this.setMainHand(true);
+		
+		this.setGoldValue(5);
 	}
 	
 	private int dmgMod = 0;

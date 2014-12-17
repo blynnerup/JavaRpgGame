@@ -1,6 +1,7 @@
 package player;
 
 import weapons.*;
+import consumables.*;
 public class Hero {
 	
 	private String name = "";
@@ -26,9 +27,13 @@ public class Hero {
 	
 	private GenericWeapon weapon = null;
 	public Inventory inventory = null;
+	public Paperdoll paperDoll = null;
 	
 	public Hero(){
 		inventory = new Inventory();
+		paperDoll = new Paperdoll();
+		GenericWeapon mace = new WornMace();
+		inventory.addWeaponToInventory(mace);
 	}
 	
 	public void equipWeapon(GenericWeapon weapon){
@@ -143,7 +148,8 @@ public class Hero {
 	}
 
 	public void setWeapon(GenericWeapon weapon) {
-		this.weapon = weapon;
+		if(paperDoll.equipWeapon(weapon, inventory))
+			this.weapon = weapon;
 	}
 
 	public int getArmor() {

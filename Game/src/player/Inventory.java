@@ -7,8 +7,8 @@ import weapons.GenericWeapon;
 
 public class Inventory {
 
-	ArrayList<GenericWeapon> weaponsInInventory;
-	ArrayList<GenericConsumable> consumablesInInventory;
+	public ArrayList<GenericWeapon> weaponsInInventory;
+	public ArrayList<GenericConsumable> consumablesInInventory;
 	
 	public Inventory() {
 		weaponsInInventory = new ArrayList<GenericWeapon>();
@@ -17,23 +17,31 @@ public class Inventory {
 	
 	public void addWeaponToInventory(GenericWeapon weap){
 		weaponsInInventory.add(weap);
-		System.out.println("The " + weap.toString() + " has been placed in your inventory.");
 	}
 	
 	public void addConsumableToInventory(GenericConsumable cons){
 		consumablesInInventory.add(cons);
-		System.out.println("The " + cons.toString() + " has been placed in your inventory.");
 	}
 	
-	public int sellWeapon(GenericWeapon weap){
-		System.out.println("You have sold your " + weap.toString() + " for " + weap.getGoldValue() +" gold.");
+	public void removeWeaponFromInventory(GenericWeapon weap){
 		weaponsInInventory.remove(weap);
+	}
+	
+	public void removeConsumableFromInventory(GenericConsumable cons){
+		consumablesInInventory.remove(cons);
+	}
+	
+	public int sellWeapon(int index){
+		GenericWeapon weap = weaponsInInventory.get(index);
+		System.out.println("You have sold your " + weap.toString() + " for " + weap.getGoldValue() +" gold.");
+		weaponsInInventory.remove(index);
 		return weap.getGoldValue();
 	}
 	
-	public int sellConsumable(GenericConsumable cons){
+	public int sellConsumable(int index){
+		GenericConsumable cons = consumablesInInventory.get(index);
 		System.out.println("You have sold your " + cons.toString() + " for " + cons.getGoldValue() + " gold.");
-		consumablesInInventory.remove(cons);
+		consumablesInInventory.remove(index);
 		return cons.getGoldValue();
 	}
 	

@@ -8,6 +8,8 @@ public class ManaPotion extends GenericConsumable {
 		this.setInstantManaRegain(5);
 		this.setLevel(1);
 		this.setName("Mana Potion");
+		
+		this.setGoldValue(3);
 	}
 	
 	@Override

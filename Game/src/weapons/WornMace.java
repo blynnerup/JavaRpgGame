@@ -12,6 +12,10 @@ public class WornMace extends GenericWeapon {
 	this.setName("Worn Mace");
 	this.setRanged(false);
 	this.setTwoHanded(false);
+	this.setOffHand(false);
+	this.setMainHand(true);
+	
+	this.setGoldValue(5);
 }
 
 private int dmgMod = 0;

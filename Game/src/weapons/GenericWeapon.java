@@ -10,6 +10,8 @@ public class GenericWeapon {
 	private Boolean twoHanded = false;
 	private String Description = "";
 	private int goldValue = 0;
+	private Boolean offHand = false;
+	private Boolean mainHand = false;
 	
 	//TODO durability? class limitations?...ect
 	
@@ -87,5 +89,21 @@ public class GenericWeapon {
 
 	public void setGoldValue(int goldValue) {
 		this.goldValue = goldValue;
+	}
+
+	public Boolean getOffHand() {
+		return offHand;
+	}
+
+	public void setOffHand(Boolean offHand) {
+		this.offHand = offHand;
+	}
+
+	public Boolean getMainHand() {
+		return mainHand;
+	}
+
+	public void setMainHand(Boolean mainHand) {
+		this.mainHand = mainHand;
 	}
 }
