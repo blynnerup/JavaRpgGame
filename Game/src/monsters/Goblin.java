@@ -27,9 +27,17 @@ public class Goblin extends GenericMonster {
 		this.setArmor(1);
 		this.setFireResistance(1);
 		
+		this.setBasisLevel(1);
+		
 		// Set equipment
 		GenericWeapon dagger = new DullDagger();
 		equipWeapon(dagger);
+		calculateXpValue();
+	}
+	
+	private void calculateXpValue(){
+		int weaponLevel = this.getEquipment().getLevel();
+		this.setXpValue(weaponLevel * this.getBasisLevel()); 
 	}
 	
 	@Override
@@ -40,7 +48,7 @@ public class Goblin extends GenericMonster {
 	
 	@Override
 	public String death(){
-		return "Ugh..stupid..";
+		return "\"Ugh..stupid..\" The goblin falls dead to the ground.";
 	}
 	
 	 @Override

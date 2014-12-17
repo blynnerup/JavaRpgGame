@@ -9,7 +9,6 @@ import monsters.GenericMonster;
 
 // Basic class to handle basic combat
 public class Combat {
-	//TODO finish this....
 	Hero hero;
 	GenericMonster monster;
 	private Boolean heroWon = true;
@@ -37,25 +36,29 @@ public class Combat {
 			e1.printStackTrace();
 		}
 		Boolean dead = false;
-		int monsterHit = monster.getHitPoints();
+		int monsterHitPoints = monster.getHitPoints();
+		int heroHitPoints = hero.getHitPoints();
 		while(!dead)
 		{
 			int hDmgDone = calculateHeroDamageDone(hero, monster);
 			int mDmgDone = calculateMonsterDamageDone(monster, hero);
 			
-			System.out.println("You hit the monster for: " + hDmg + " damage with your " + hero.getWeapon().toString() + ". The monster blocks " 
+			System.out.println("You hit the " + monster.toString() + " for: " + hDmg + " damage with your " + hero.getWeapon().toString() + ". The monster blocks " 
 			+ mResistanceValue + " damage. And suffers " + hDmgDone + " damage");
-			System.out.println("The monster hits you for: " + mDmg + " with its' " + monster.getEquipment() + ". You block " + hResistanceValue + " damage. You suffer "
+			System.out.println("The " + monster.toString() + " hits you for: " + mDmg + " with its' " + monster.getEquipment() + ". You block " + hResistanceValue + " damage. You suffer "
 					+ mDmgDone + " damage.");
-			monster.setHitPoints(monsterHit - hDmgDone);
-			monsterHit = monster.getHitPoints();
-			if(monsterHit > 0)
+			monster.setHitPoints(monsterHitPoints - hDmgDone);
+			monsterHitPoints = monster.getHitPoints();
+			if(monsterHitPoints > 0)
 				System.out.println(monster.status());
 			try {
 				System.in.read();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			hero.setHitPoints(heroHitPoints - mDmgDone);
+			System.out.println("You have " + hero.getHitPoints() + " hitpoints remaining.");
 			
 			if(hero.getHitPoints() <= 0){
 				System.out.println("You've died");
@@ -73,10 +76,11 @@ public class Combat {
 	}
 	
 	//TODO create to hit methods, magic, ranged and melee...
+	//TODO create menu for consume, attack, flee, stuff...
 	
 	
 	private int calculateHeroDamageDone(Hero h, GenericMonster m){
-		// Take into account armor, magic resist, thoughness, that kinda of thing..
+		// Take into account armor, magic resist, thoughness, that kind of thing..
 		hDmg = h.getWeapon().calculateDamageDelt();
 		calcDef = new CalculateDefence(h.getWeapon(), m);
 		int def = calcDef.getMonsterDefense();
@@ -90,7 +94,7 @@ public class Combat {
 		mDmg = m.getEquipment().calculateDamageDelt();
 		calcDef = new CalculateDefence(m.getEquipment(), h);
 		int def = calcDef.getHeroDefense();
-		// Getting the defense value and stype
+		// Getting the defense value and type
 		hResistance = calcDef.getHeroDefType();
 		hResistanceValue = calcDef.getHeroDefValue();
 		return (mDmg - def);
@@ -105,6 +109,8 @@ public class Combat {
 	}
 	
 	public void endOfCombat(GenericMonster monster){
+		System.out.println("You have defeated the " + this.monster.toString() + " and gain " + this.monster.getXpValue() + " xp.");
+		hero.setXp(hero.getXp() + this.monster.getXpValue());
 		String printLootText = "";
 		int gold = monster.goldLoot();
 		GenericConsumable consumable = monster.consumableLoot();

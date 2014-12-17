@@ -19,13 +19,22 @@ public class GenericMonster {
 	private int armor = 0;
 	private int fireResistance = 0;
 	
-	//TODO Create xp gain value, level?
+	private int xpValue = 0;
+	private int basisLevel = 1;
 	
 	// Basic gear
 	private GenericWeapon equipment = null;
 	
+	public GenericMonster(){
+		calculateXpValue();
+	}
+	
 	public void equipWeapon(GenericWeapon weapon){
 		
+	}
+		
+	private void calculateXpValue(){
+		setXpValue(getEquipment().getLevel() + getBasisLevel());
 	}
 	
 	public int goldLoot(){
@@ -138,5 +147,21 @@ public class GenericMonster {
 
 	public void setEquipment(GenericWeapon equipment) {
 		this.equipment = equipment;
+	}
+
+	public int getXpValue() {
+		return xpValue;
+	}
+
+	public void setXpValue(int xpValue) {
+		this.xpValue = xpValue;
+	}
+
+	public int getBasisLevel() {
+		return basisLevel;
+	}
+
+	public void setBasisLevel(int basisLevel) {
+		this.basisLevel = basisLevel;
 	}
 }

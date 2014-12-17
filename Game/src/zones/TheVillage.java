@@ -3,6 +3,7 @@ package zones;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import npcs.VillageTrader;
 import player.Hero;
 
 // First instance to go to.. Mainly for testing out basic stuff
@@ -37,6 +38,7 @@ public class TheVillage {
 				// TODO Create Trader
 				System.out.println("You go to the local merchant.");
 				validSelection = true;
+				goTrade(h);
 				break;
 			case 2:
 				// TODO Create looking for adventure post
@@ -48,5 +50,10 @@ public class TheVillage {
 				break;
 			}
 		}
+	}
+	
+	private void goTrade(Hero hero){
+		VillageTrader trader = new VillageTrader(hero);
+		trader.Greeting();
 	}
 }

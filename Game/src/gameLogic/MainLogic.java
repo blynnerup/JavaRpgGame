@@ -1,7 +1,10 @@
 package gameLogic;
 
+import java.io.IOException;
+
 import monsters.GenericMonster;
 import monsters.Goblin;
+import monsters.Orc;
 import player.Hero;
 import zones.TheVillage;
 
@@ -38,6 +41,12 @@ public class MainLogic {
 		System.out.println("Headed out from your hometown towards the near village of Hout, you travel along the main road, when in the distance you see a small creature chasing a woman." + 
 	"\nYou ready your " + h.getWeapon().toString() + " and charge ahead. As you get closer you see the creature is a goblin. The woman screams for help, and you rush in");
 		GenericMonster gobbo = new Goblin();
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 Combat cmb = new Combat(h, gobbo);
 		 if(cmb.getHeroWon()){
 			 System.out.println("The woman thanks you for aiding her and takes you to the village market.");
