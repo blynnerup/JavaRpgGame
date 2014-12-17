@@ -18,6 +18,7 @@ public class Hero {
 	private int hitPoints = 0;
 	private int stamina = 0;
 	private int willpower = 0;
+	public int maxHitPoints = 0;
 	
 	// Resistances
 	private int armor = 2;
@@ -35,6 +36,10 @@ public class Hero {
 		weapon.damageModifier(getStrength());
 	}
 	
+	public void regainMaxHitPoints(){
+		System.out.println("Your health is replenished.");
+		hitPoints = maxHitPoints;
+	}
 	
 // Name get/set
 	public String getName() {

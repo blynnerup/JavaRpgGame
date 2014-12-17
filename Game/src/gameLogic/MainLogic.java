@@ -3,6 +3,7 @@ package gameLogic;
 import monsters.GenericMonster;
 import monsters.Goblin;
 import player.Hero;
+import zones.TheVillage;
 
 public class MainLogic {
 	
@@ -39,14 +40,18 @@ public class MainLogic {
 		GenericMonster gobbo = new Goblin();
 		 Combat cmb = new Combat(h, gobbo);
 		 if(cmb.getHeroWon()){
-			 
+			 System.out.println("The woman thanks you for aiding her and takes you to the village market.");
+			 System.out.println("She gives you something to eat and you rest for a while.");
+			 h.regainMaxHitPoints();
+			 TheVillage village = new TheVillage(h);
+			 village.villageMarket();			 
 		 }
 		 else{
 			 gameRunning = false;
+			 System.out.println("The goblin mocks you as you sink to the ground. Your adventure ends here.");
 		 }
 		
 	}
-	
 	
 
 }

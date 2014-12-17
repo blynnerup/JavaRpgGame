@@ -50,6 +50,7 @@ public class ImportBasicStats {
 									break;
 								case "hitPoints":
 									hero.setHitPoints(Integer.parseInt(stat.getTextContent()));
+									hero.maxHitPoints = hero.getHitPoints();
 									break;
 								case "stamina":
 									hero.setStamina(Integer.parseInt(stat.getTextContent()));
