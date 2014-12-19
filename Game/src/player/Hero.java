@@ -1,7 +1,6 @@
 package player;
 
 import weapons.*;
-import consumables.*;
 public class Hero {
 	
 	private String name = "";

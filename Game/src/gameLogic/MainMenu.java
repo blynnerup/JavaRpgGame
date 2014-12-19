@@ -72,7 +72,7 @@ public class MainMenu {
 	 */
 	private void loadGame(){
 		System.out.println("Game won't be loaded, this functionality isn't implemented!");
-		//TODO implement this
+		//TODO implement loadGame
 		MainLogic main = new MainLogic();
 		// load hero from save..
 		Hero h = new Hero();

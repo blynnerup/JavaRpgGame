@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import monsters.GenericMonster;
 import monsters.Goblin;
-import monsters.Orc;
 import player.Hero;
 import zones.TheVillage;
 
@@ -45,7 +44,7 @@ public class MainLogic {
 		try {
 			System.in.read();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Something went bad when reading input.");
 			e.printStackTrace();
 		}
 		 Combat cmb = new Combat(h, gobbo);
